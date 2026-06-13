@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+
+# Model weights — large files, track with Git LFS on HF
+# (HF Spaces handles this automatically for .bin and .safetensors)
+*.bin
+*.safetensors
+
+# Local dev
+.venv/
+venv/
+gpt2-finetuned-final/
+__pycache__/

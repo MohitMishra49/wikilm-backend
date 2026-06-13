@@ -1,0 +1,20 @@
+# WikiLM Backend — Python dependencies
+# Pinned versions for reproducible HF Spaces deployment
+
+# Web framework
+fastapi==0.111.0
+uvicorn[standard]==0.29.0        # [standard] includes websockets + httptools
+
+# ML stack
+# torch CPU build — HF free tier has no GPU.
+# If you upgrade to a paid GPU Space, change to the CUDA build in the Dockerfile.
+torch==2.2.2
+transformers==4.40.1
+accelerate==0.29.3               # needed by transformers for some model loading paths
+safetensors==0.4.3               # faster/safer model weight format (HF default)
+
+# Pydantic v2 — FastAPI uses this for request/response validation
+pydantic==2.7.1
+
+# Utilities
+numpy==1.26.4                    # pinned: numpy 2.x has breaking changes with some torch ops
