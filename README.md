@@ -1,4 +1,5 @@
 ---
+
 title: WikiLM API
 emoji: 📖
 colorFrom: green
@@ -6,35 +7,55 @@ colorTo: blue
 sdk: docker
 pinned: false
 app_port: 7860
----
+--------------
 
-# WikiLM — GPT-2 Fine-tuned on WikiText-103
+# WikiLM — GPT-2 Fine-Tuned on WikiText-103
 
-FastAPI inference server for a GPT-2 model fine-tuned on WikiText-103-raw-v1.
+WikiLM is a GPT-2 language model fine-tuned on the WikiText-103 dataset and deployed using FastAPI on Hugging Face Spaces. The project includes a React + TypeScript frontend hosted on Vercel.
+
+## Live Demo
+
+🌐 Frontend: https://wikilm-frontend.vercel.app/
+
+🤗 Hugging Face Space: https://huggingface.co/spaces/MohitMishra4905/wikilm-api
+
+🚀 API Endpoint: https://mohitmishra4905-wikilm-api.hf.space
+
+## Tech Stack
+
+* GPT-2
+* Hugging Face Transformers
+* FastAPI
+* PyTorch
+* React
+* TypeScript
+* Vite
+* Hugging Face Spaces
+* Vercel
 
 ## API Endpoints
 
-| Method | Path | Description |
-|---|---|---|
-| GET | `/` | Root health check |
-| GET | `/health` | Detailed status |
-| POST | `/generate` | Generate text |
-| GET | `/docs` | Interactive Swagger UI |
+| Method | Endpoint    | Description   |
+| ------ | ----------- | ------------- |
+| GET    | `/`         | Health check  |
+| GET    | `/health`   | Model status  |
+| POST   | `/generate` | Generate text |
+| GET    | `/docs`     | Swagger UI    |
 
-## Example request
+## Example Request
 
 ```bash
-curl -X POST https://YOUR-SPACE-URL.hf.space/generate \
-  -H "Content-Type: application/json" \
-  -d '{
-    "prompt": "The history of machine learning began with",
-    "max_new_tokens": 150,
-    "temperature": 0.8,
-    "top_p": 0.92
-  }'
+curl -X POST https://mohitmishra4905-wikilm-api.hf.space/generate \
+-H "Content-Type: application/json" \
+-d '{
+  "prompt": "The history of machine learning began with",
+  "max_new_tokens": 150,
+  "temperature": 0.8,
+  "top_p": 0.92
+}'
 ```
 
-## Example response
+## Example Response
 
 ```json
 {
@@ -46,6 +67,20 @@ curl -X POST https://YOUR-SPACE-URL.hf.space/generate \
   "device": "cpu"
 }
 ```
-Model weights are hosted on Hugging Face Spaces.
 
-link for the check the project - https://wikilm-frontend.vercel.app/
+## Model Information
+
+* Base Model: GPT-2
+* Dataset: WikiText-103
+* Framework: PyTorch + Transformers
+* Deployment: Hugging Face Spaces (Docker)
+
+## Author
+
+Mohit Mishra
+
+B.Tech Student | AI & Machine Learning Enthusiast
+
+LinkedIn: https://linkedin.com/in/YOUR-LINKEDIN
+
+GitHub: https://github.com/MohitMishra49
